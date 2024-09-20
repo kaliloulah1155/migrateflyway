@@ -1,0 +1,28 @@
+databaseType = "PostgreSql"
+id = "67645004-1155-41f9-a9b7-f9f5c41b5d0d"
+name = "pgrest"
+
+[flyway]
+locations = [ "filesystem:migrations" ]
+mixed = true
+outOfOrder = true
+schemaModelLocation = "schema-model"
+validateMigrationNaming = true
+
+  [flyway.check]
+  majorTolerance = 0
+
+[flywayDesktop]
+developmentEnvironment = "development"
+schemaModel = "schema-model"
+shadowEnvironment = "shadow"
+
+[redgateCompare]
+filterFile = "filter.rgf"
+
+[redgateCompare.postgresql.options.ignores]
+ignoreNewlinesInTextObjects = "off"
+
+[environments.mabase]
+url = "jdbc:postgresql://127.0.0.1:5432/postgres"
+schemas = [ "api" ]
