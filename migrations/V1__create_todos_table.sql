@@ -1,0 +1,6 @@
+CREATE TABLE api.todos (
+    id SERIAL PRIMARY KEY,
+    task TEXT NOT NULL,
+    done BOOLEAN DEFAULT FALSE,
+     due_date DATE DEFAULT NULL
+);
